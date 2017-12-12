@@ -21,7 +21,7 @@ DWORD		m_dScnX		= 600;			// Screen Width
 DWORD		m_dScnY		= 400;			// Screen Height
 BOOL		m_bShowCusor= TRUE;			// Show Cusor
 
-//Window+Device°ü·Ã ÇÔ¼öµé
+//Window+DeviceÂ°Ã¼Â·Ãƒ Ã‡Ã”Â¼Ã¶ÂµÃ©
 INT		Create(HINSTANCE hInst);
 INT		Run();
 void	Cleanup();
@@ -29,8 +29,8 @@ void	Cleanup();
 LRESULT MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam );
 LRESULT WINAPI WndProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam );
 
-char    m_fontFile[] ="_font/GodoB.ttf";
-char    m_msg[] = "À©µµ ÇÚµé";
+char    m_fontFile[] ="_font/NanumGothic.ttf";
+char    m_msg[] = "Ã€Â©ÂµÂµ Ã‡ÃšÂµÃ©";
 
 glc::GdiFont*  font_gdi;
 glc::GdiPFont* font_gdip;
