@@ -1,4 +1,4 @@
-
+﻿
 #pragma comment(lib, "Dwrite.lib")
 #pragma warning(disable:4005)
 #include <string>
@@ -32,20 +32,20 @@ GdiFont* GdiFont::create(const char* font_file, float font_height)
 	return ret;
 }
 
-void GdiFont::drawText(HDC hdc, const char* msg, int x, int y, UINT color_txt, UINT color_shadow)
+void GdiFont::drawText(HDC hdc, const char* msg, int pos_x, int pos_y, UINT color_txt, UINT color_shadow)
 {
 	HFONT oldFont = (HFONT)SelectObject(hdc, m_font);
 	SetBkMode(hdc, TRANSPARENT);
 	SetTextColor(hdc, color_shadow);
-	for(int y=0; y<3; ++y)
-	{
-		for(int x=0; x<3; ++x)
-		{
-			TextOut(hdc, 10+x-1, 20+y-1, msg, strlen(msg));
-		}
-	}
+	//for(int y=0; y<3; ++y)
+	//{
+	//	for(int x=0; x<3; ++x)
+	//	{
+	//		TextOut(hdc, pos_x+x-1, pos_y+y-1, msg, strlen(msg));
+	//	}
+	//}
 	SetTextColor(hdc, color_txt);
-	TextOut(hdc, 10, 20, msg, strlen(msg));
+	TextOut(hdc, pos_x, pos_y, msg, strlen(msg));
 	SelectObject(hdc, oldFont);
 
 }

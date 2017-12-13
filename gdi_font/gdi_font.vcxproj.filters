@@ -18,7 +18,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="gdifont\gdi_font.cpp">
+    <ClCompile Include="gdifont\GdiFont.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="gdifont\GdiPlusFont.cpp">

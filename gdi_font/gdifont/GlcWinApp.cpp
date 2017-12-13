@@ -1,4 +1,4 @@
-
+ï»¿
 #pragma comment(lib, "ComCtl32.lib")
 
 #include "GlcWinApp.h"
@@ -256,7 +256,7 @@ WinControlList* WinControlList::create(const char*name, const RECT_L& rc, HWND p
 
 int WinControlList::Init(const char*name, const RECT_L& rc, HWND parent)
 {
-	// ¸®½ºÆ® ÄÁÆ®·ÑÀ» ÀÚ¼¼È÷ º¸±â·Î ¸¸µç´Ù.
+	// ë¦¬ìŠ¤íŠ¸ ì»¨íŠ¸ë¡¤ì„ ìì„¸íˆ ë³´ê¸°ë¡œ ë§Œë“ ë‹¤.
 	m_clzz = (const char*)WC_LISTVIEWA;
 	if(name)
 		m_name = name;
@@ -386,7 +386,7 @@ LRESULT WinControlList::msgPrc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPara
 			break;
 		}
 
-		case NM_CUSTOMDRAW+100:
+		case GLC_NM_CUSTOMDRAW:
 		{
 			switch(pNMCustomDraw->nmcd.dwDrawStage)
 			{
@@ -429,17 +429,17 @@ int CALLBACK Compare(LPARAM p1, LPARAM p2, LPARAM lParamSort)
 	char str1[256+4]={0},str2[256+4]={0};
 	LVFINDINFO fi ={0};
 
-	// p1À¸·ÎºÎÅÍ Ã¹ ¹øÂ° Ç×¸ñÀÇ ÀÎµ¦½º¸¦ Ã£À½
+	// p1ìœ¼ë¡œë¶€í„° ì²« ë²ˆì§¸ í•­ëª©ì˜ ì¸ë±ìŠ¤ë¥¼ ì°¾ìŒ
 	fi.flags=LVFI_STRING;
 	fi.psz=(LPCTSTR)p1;
 	fi.vkDirection=VK_DOWN;
 	idx1=ListView_FindItem(param->h,-1,&fi);
 
-	// p2·ÎºÎÅÍ µÎ ¹øÂ° Ç×¸ñÀÇ ÀÎµ¦½º¸¦ Ã£À½
+	// p2ë¡œë¶€í„° ë‘ ë²ˆì§¸ í•­ëª©ì˜ ì¸ë±ìŠ¤ë¥¼ ì°¾ìŒ
 	fi.psz=(LPCTSTR)p2;
 	idx2=ListView_FindItem(param->h,-1,&fi);
 
-	// µÎ Ç×¸ñÀÇ ºñ±³ ÅØ½ºÆ®¸¦ ±¸ÇÑ´Ù.
+	// ë‘ í•­ëª©ì˜ ë¹„êµ í…ìŠ¤íŠ¸ë¥¼ êµ¬í•œë‹¤.
 	ListView_GetItemText(param->h, idx1, param->c, str1, 256);
 	ListView_GetItemText(param->h, idx2, param->c, str2, 256);
 

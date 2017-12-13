@@ -1,4 +1,4 @@
-
+﻿
 #pragma comment(lib, "Gdiplus.lib")
 
 #include "GlcWinApp.h"

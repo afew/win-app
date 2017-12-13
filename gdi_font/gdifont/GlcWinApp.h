@@ -1,4 +1,4 @@
-
+﻿
 #ifdef _MSC_VER
 #pragma once
 #endif
@@ -7,7 +7,6 @@
 #define _GlcWinApp_H_
 
 #include <string>
-#include <tuple>
 #include <map>
 #include <windows.h>
 #include <CommCtrl.h>
@@ -81,7 +80,7 @@ struct TWIN_PARAM
     HMENU     menu    ={};
     void*     param   ={};
 	TWIN_PARAM(LPCSTR clzz, const RECT_L& _rc
-				, DWORD style=0, DWORD estyle=0,HWND prn=NULL, HMENU m=NULL, void* p=NULL) 
+				, DWORD style=0, DWORD estyle=0,HWND prn=NULL, HMENU m=NULL, void* p=NULL)
 				: className(clzz), rc(_rc), parent(prn), menu(m), param(p){}
 };
 
@@ -115,6 +114,11 @@ public:
 
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
+
+enum
+{
+	GLC_NM_CUSTOMDRAW = NM_FIRST+0X10,
+};
 
 class WinControlList : public IWinBase
 {

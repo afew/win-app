@@ -1,4 +1,4 @@
-// D3D Sprite Tutorial
+﻿// D3D Sprite Tutorial
 //
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -17,11 +17,11 @@ char		m_sCls[128]		;
 HINSTANCE	m_hInst		= NULL;
 HWND		m_hWnd		= NULL;
 DWORD		m_dWinStyle	= WS_OVERLAPPEDWINDOW| WS_VISIBLE;
-DWORD		m_dScnX		= 600;			// Screen Width
-DWORD		m_dScnY		= 400;			// Screen Height
+DWORD		m_dScnX		= 800;			// Screen Width
+DWORD		m_dScnY		= 480;			// Screen Height
 BOOL		m_bShowCusor= TRUE;			// Show Cusor
 
-//Window+Device°ü·Ã ÇÔ¼öµé
+//Window+Device관련 함수들
 INT		Create(HINSTANCE hInst);
 INT		Run();
 void	Cleanup();
@@ -29,8 +29,9 @@ void	Cleanup();
 LRESULT MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam );
 LRESULT WINAPI WndProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam );
 
-char    m_fontFile[] ="_font/NanumGothic.ttf";
-char    m_msg[] = "À©µµ ÇÚµé";
+const char*    m_fontFile1 ="_font/아리따-돋움(TTF)-SemiBold.ttf";
+const char*    m_fontFile2 ="_font/Daum_Regular.ttf";
+char    m_msg[] = "Hello world !!!! 안녕하세요. 1234567890";
 
 glc::GdiFont*  font_gdi;
 glc::GdiPFont* font_gdip;
@@ -43,13 +44,13 @@ INT Create( HINSTANCE hInst)
 	if(!glc::GdiPlus::getInstance()->isSuccess())
 		return -1;
 
-	font_gdip =glc::GdiPFont::create(m_fontFile, 15.0f);
+	font_gdip =glc::GdiPFont::create(m_fontFile1, 20.0F);
 	if(!font_gdip)
 		return -1;
 
 
 	HRESULT ret = 0;
-	font_gdi = glc::GdiFont::create(m_fontFile, 15);
+	font_gdi = glc::GdiFont::create(m_fontFile2, 20.0F);
 	if(!font_gdi)
 		return -1;
 
